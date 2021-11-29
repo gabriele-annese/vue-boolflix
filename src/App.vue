@@ -1,28 +1,64 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header />
+    <main>
+      <Grid />
+    </main>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Grid from './components/Grid.vue'
+import Header from './components/Header.vue'
+import axios from 'axios'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    Header,
+    Grid
+  },
+  data(){
+    return {
+      moviesArray: null
+    }
+  },
+  created(){
+    this.axios()
+  },
+  methods:{
+    axios(){
+      axios.get('https://api.themoviedb.org/3/search/movie',{
+        params:{
+          api_key: '197d0fb590411b5e07fcf33c7772ae5e',
+          query: 'Fantozzi',
+          language: 'it-IT'
+        }
+      })
+      .then(result =>{
+              console.log(result.data.results)
+              this.moviesArray = result.data.results
+              })
+      .catch (err => 
+              console.log(err))
+
+              
+}
+  },
 }
 </script>
 
 <style lang="scss">
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin-left: 30px;
+  margin-top: 30px;
 }
 </style>
