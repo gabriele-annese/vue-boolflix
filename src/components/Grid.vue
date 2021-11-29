@@ -10,16 +10,15 @@
                 />
             </div>
         </div>
-        <div v-else>
-            loading...
-        </div>
+        <Loader v-else/>
     </section>
 </template>
 
 <script>
 import Card from './Card.vue'
+import Loader from './Loader.vue'
 export default {
-  components: { Card },
+  components: { Card, Loader },
 name: 'Grid',
 props:{
     moviesArray: Array
