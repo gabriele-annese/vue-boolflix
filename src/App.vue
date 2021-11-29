@@ -2,7 +2,7 @@
   <div id="app">
     <Header />
     <main>
-      <Grid />
+      <Grid :moviesArray= "moviesArray"/>
     </main>
   </div>
 </template>

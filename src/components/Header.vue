@@ -5,7 +5,7 @@
             placeholder="cerca il tuo film"
             v-model= "textMovies"
       >
-      <button class="submit">
+      <button type="submit">
           search
       </button>
   </form>
