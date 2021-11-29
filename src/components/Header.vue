@@ -29,5 +29,23 @@ methods:{
 </script>
 
 <style lang="scss" scoped>
-
+input{
+    outline: none;
+    padding: 5px 5px;
+    &:focus{
+        border: 2px solid #000;
+    }
+}
+button{
+    margin-left: 10px;
+    padding: 5px 5px;
+    background: none;
+    border: 1px solid black;
+    cursor: pointer;
+    &:focus,
+    &:hover{
+        background: #000;
+        color: #fff;
+    }
+}
 </style>

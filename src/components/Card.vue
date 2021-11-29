@@ -2,16 +2,16 @@
   <ul>
       <li>
             <h2>
-                {{title}}
+                Titolo: {{title}}
             </h2>
             <h4>
-                {{originalTitle}}
+                Titolo Originale: {{originalTitle}}
             </h4>
             <h4>
-                {{language}}
+                Lingua: {{language}}
             </h4>
             <h4>
-                {{text}}
+                Valutazione: {{text}}
             </h4>
       </li>
   </ul>
@@ -30,5 +30,11 @@ props:{
 </script>
 
 <style lang="scss" scoped>
-
+ul {
+    margin-top: 20px;
+    margin-left: 10px;
+    h2,h4{
+        padding-top: 8px;
+    }
+}
 </style>
