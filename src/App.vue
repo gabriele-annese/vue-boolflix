@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header @clickMovies="functionMovies"/>
     <main>
       <Grid :moviesArray= "moviesArray"/>
     </main>
@@ -20,7 +20,8 @@ export default {
   },
   data(){
     return {
-      moviesArray: null
+      moviesArray: null,
+      inputMovie: ''
     }
   },
   created(){
@@ -41,9 +42,11 @@ export default {
               })
       .catch (err => 
               console.log(err))
-
-              
-}
+},
+  functionMovies(text){
+    this.inputMovie = text
+    console.log(this.inputMovie)
+  }
   },
 }
 </script>

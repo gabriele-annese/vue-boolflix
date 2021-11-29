@@ -3,9 +3,9 @@
       <input type="text"
             class="from-control"
             placeholder="cerca il tuo film"
-            v-model= "textMovies"
+            v-model.trim= "textMovies"
       >
-      <button type="submit">
+      <button type="submit" @click.prevent="sendEmit">
           search
       </button>
   </form>
@@ -17,6 +17,12 @@ name: 'Header',
 data(){
     return{
         textMovies: ''
+    }
+},
+methods:{
+    sendEmit(){
+        if(this.textMovies !== '') this.$emit("clickMovies", this.textMovies);
+        this.textMovies = "";
     }
 },
 }
