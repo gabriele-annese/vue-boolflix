@@ -28,26 +28,28 @@ export default {
     this.axios()
   },
   methods:{
-    axios(){
-      axios.get('https://api.themoviedb.org/3/search/movie',{
-        params:{
-          api_key: '197d0fb590411b5e07fcf33c7772ae5e',
-          query: 'Fantozzi',
-          language: 'it-IT'
-        }
-      })
-      .then(result =>{
-              console.log(result.data.results)
-              this.moviesArray = result.data.results
-              })
-      .catch (err => 
-              console.log(err))
-},
   functionMovies(text){
     this.inputMovie = text
     console.log(this.inputMovie)
-  }
+    this.axios();
   },
+   axios(){
+        axios.get('https://api.themoviedb.org/3/search/movie',
+                {
+                    params:{
+                        api_key: '197d0fb590411b5e07fcf33c7772ae5e',
+                        query: this.inputMovie,
+                        language: 'it-IT'
+                    }
+                })
+              .then(result =>{
+                        console.log(result.data.results)
+                        this.moviesArray = result.data.results
+                        })
+              .catch (err => 
+                        console.log(err))
+            }
+   },
 }
 </script>
 
