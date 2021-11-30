@@ -27,10 +27,6 @@ export default {
       inputMovie: '',
     }
   },
-  created(){
-    this.axiosMovies()
-    this.axiosTv();
-  },
   methods:{
   functionMovies(text){
     this.inputMovie = text
