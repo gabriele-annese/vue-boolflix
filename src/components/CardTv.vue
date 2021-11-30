@@ -2,12 +2,12 @@
   <ul>
       <li>
             <h2>
-                Titolo: {{title}}
+                Nome serie: {{title}}
             </h2>
       </li>
       <li>
             <h4>
-                Titolo Originale: {{originalTitle}}
+                Nome Originale: {{originalTitle}}
             </h4>
       </li>
       <li class="img-container">
@@ -29,7 +29,7 @@
 
 <script>
 export default {
-name: 'Card',
+name: 'CardTv',
 props:{
     title: String,
     originalTitle: String,

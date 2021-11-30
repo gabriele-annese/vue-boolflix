@@ -2,7 +2,9 @@
   <div id="app">
     <Header @clickMovies="functionMovies"/>
     <main>
-      <Grid :moviesArray= "moviesArray"/>
+      <Grid :moviesArray= "moviesArray"
+            :tvArray= "tvArray"
+      />
     </main>
   </div>
 </template>
@@ -20,20 +22,23 @@ export default {
   },
   data(){
     return {
+      tvArray: null,
       moviesArray: null,
-      inputMovie: ''
+      inputMovie: '',
     }
   },
   created(){
-    this.axios()
+    this.axiosMovies()
+    this.axiosTv();
   },
   methods:{
   functionMovies(text){
     this.inputMovie = text
     console.log(this.inputMovie)
-    this.axios();
+    this.axiosMovies();
+    this.axiosTv();
   },
-   axios(){
+   axiosMovies(){
         axios.get('https://api.themoviedb.org/3/search/movie',
                 {
                     params:{
@@ -48,8 +53,28 @@ export default {
                         })
               .catch (err => 
                         console.log(err))
-            }
-   },
+    },
+  axiosTv(){
+    axios.get('https://api.themoviedb.org/3/search/tv',
+                {
+                    params:{
+                        api_key: '197d0fb590411b5e07fcf33c7772ae5e',
+                        query: this.inputMovie,
+                        language: 'it-IT'
+                    }
+                })
+              .then(result =>{
+                        console.log(result.data.results)
+                        this.tvArray = result.data.results
+                        })
+              .catch (err => 
+                        console.log(err))
+  },
+
+  }
+
+
+
 }
 </script>
 
