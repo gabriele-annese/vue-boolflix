@@ -1,6 +1,9 @@
 <template>
   <ul>
       <li>
+          
+      </li>
+      <li>
             <h2>
                 Nome serie: {{title}}
             </h2>

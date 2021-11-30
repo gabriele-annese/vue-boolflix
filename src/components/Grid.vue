@@ -1,7 +1,10 @@
 <template>
     <section>
-        <div class="list-movies"  v-if = "moviesArray !== null">
+        <div class="box-movies"  v-if = "moviesArray !== null">
             <div v-for="(elMovies, index) in moviesArray" :key="`elMovies-${index}`" >
+                <div class="imgMovie" >
+                     <img :src="`https://image.tmdb.org/t/p/${Imgsize}${elMovies.poster_path} `" :alt="elMovies.title">
+                </div>
                 <Card 
                 :title="elMovies.title"
                 :originalTitle="elMovies.original_title"
@@ -10,9 +13,12 @@
                 />
             </div>
         </div>
-         <div class="list-tv"  v-if = "tvArray !== null">
+         <div class="box-tv"  v-if = "tvArray !== null">
             <div v-for="(elTv, index) in tvArray" :key="`elTv-${index}`" >
-                <CardTv 
+             <div class="imgMovie" >
+                     <img :src="`https://image.tmdb.org/t/p/${Imgsize}${elTv.poster_path} `" :alt="elTv.name">
+                </div>
+                <CardTv class="card"
                 :title="elTv.name"
                 :originalTitle="elTv.original_name"
                 :language="elTv.original_language"
@@ -34,10 +40,18 @@ name: 'Grid',
 props:{
     moviesArray: Array,
     tvArray: Array,
-}
+},
+data(){
+    return{
+        Imgsize:'w185'
+    }
+},
 }
 </script>
 
 <style lang="scss" scoped>
 
+.imgMovie{
+    margin-top: 20px;
+}
 </style>
