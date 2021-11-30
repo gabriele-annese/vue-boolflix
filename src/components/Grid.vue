@@ -2,7 +2,7 @@
     <section >
         <div  class="box-movies" v-if = "moviesArray !== null">
             <div v-for="(elMovies, index) in moviesArray" :key="`elMovies-${index}`" >
-                <div class="imgMovie" >
+                <div class="imgMovie d-flex justify-content-center" >
                      <img :src="`https://image.tmdb.org/t/p/${Imgsize}${elMovies.poster_path} `" :alt="elMovies.title">
                 </div>
                 <Card class="card"
@@ -15,7 +15,7 @@
         </div>
          <div   class="box-tv" v-if = "tvArray !== null">
             <div v-for="(elTv, index) in tvArray" :key="`elTv-${index}`">
-             <div class="imgMovie" >
+             <div class="imgMovie d-flex justify-content-center" >
                      <img :src="`https://image.tmdb.org/t/p/${Imgsize}${elTv.poster_path} `" :alt="elTv.name">
                 </div>
                 <CardTv class="card"

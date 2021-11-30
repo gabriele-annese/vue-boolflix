@@ -4,6 +4,7 @@
             class="from-control"
             placeholder="cerca il tuo film"
             v-model.trim= "textMovies"
+            @keyup.enter="sendEmit"
       >
       <button type="submit" @click.prevent="sendEmit">
           search
