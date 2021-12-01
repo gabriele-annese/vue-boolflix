@@ -20,9 +20,9 @@
             </h4>
       </li>
       <li>
-            <h4>
-                Valutazione: {{text}}
-            </h4>
+            <div class="stars-ctn">
+                <i class="fas fa-star iStar" v-for="(el, i) in starsNumber" :key=" `el-${i}`"></i>
+            </div>
       </li>
   </ul>
 </template>
@@ -40,10 +40,15 @@ computed:{
     flagVisible(){
         let visible = false
         if(this.language === "it" || this.language === "it-IT") visible= true;
-        if (this.language === "en-EN" || this.language === "en") visible= true
+        if (this.language === "en-EN" || this.language === "en") visible= true;
         return visible;
     },
-}
+    starsNumber(){
+        return Math.ceil(this.text / 2)
+    },
+},
+
+
 }
 </script>
 
@@ -54,7 +59,10 @@ ul {
     display: flex;
     flex-direction: column;
     li{
-        list-style: none;
+        list-style: none; 
+        .iStar{
+            color: gold;
+        }
     }
     h2,h4{
         padding-top: 8px;

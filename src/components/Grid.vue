@@ -50,7 +50,6 @@ data(){
 </script>
 
 <style lang="scss" scoped>
-
 .imgMovie{
     margin-top: 20px;
 }

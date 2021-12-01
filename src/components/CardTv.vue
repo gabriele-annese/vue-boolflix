@@ -1,9 +1,6 @@
 <template>
   <ul>
       <li>
-          
-      </li>
-      <li>
             <h2>
                 Nome serie: {{title}}
             </h2>
@@ -23,9 +20,9 @@
             </h4>
       </li>
       <li>
-            <h4>
-                Valutazione: {{text}}
-            </h4>
+            <div class="stars-ctn">
+                <i class="fas fa-star iStar" v-for="(el, i) in starsNumber" :key=" `el-${i}`"></i>
+            </div>
       </li>
   </ul>
 </template>
@@ -46,6 +43,9 @@ computed:{
         if (this.language === "en-EN" || this.language === "en") visible= true
         return visible;
     },
+    starsNumber(){
+        return Math.ceil(this.text / 2)
+    }
 }
 }
 </script>
@@ -58,6 +58,9 @@ ul {
     flex-direction: column;
     li{
         list-style: none;
+        .iStar{
+            color: gold;
+        }
     }
     h2,h4{
         padding-top: 8px;

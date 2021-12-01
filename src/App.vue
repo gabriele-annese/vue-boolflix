@@ -2,6 +2,7 @@
   <div id="app">
     <Header @clickMovies="functionMovies"/>
     <main>
+      <Billboard />
       <Grid :moviesArray= "moviesArray"
             :tvArray= "tvArray"
       />
@@ -12,13 +13,15 @@
 <script>
 import Grid from './components/Grid.vue'
 import Header from './components/Header.vue'
+import Billboard from './components/Billboard.vue'
 import axios from 'axios'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Grid
+    Grid,
+    Billboard
   },
   data(){
     return {
@@ -73,16 +76,20 @@ export default {
 </script>
 
 <style lang="scss">
+body, html{
+  background: #141414;
+  color: #fff;
+  line-height: 1.2;
+}
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-left: 30px;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 </style>

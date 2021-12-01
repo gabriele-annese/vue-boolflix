@@ -30,7 +30,7 @@ export default {
         }
         to{
             transform: scale(1.4);
-            color: #e63946
+            color: #dc1a28
         }
     }
 }

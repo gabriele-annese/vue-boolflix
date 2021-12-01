@@ -1,15 +1,27 @@
 <template>
-  <form>
-      <input type="text"
-            class="from-control"
-            placeholder="cerca il tuo film"
-            v-model.trim= "textMovies"
-            @keyup.enter="sendEmit"
-      >
-      <button type="submit" @click.prevent="sendEmit">
-          search
-      </button>
-  </form>
+    <header>
+        <nav class="navbar">
+            <ul class="navigation-ctn">
+                <div class="brand">
+                      <img src="../assets/gabflix.png" alt="logo">
+                 </div>
+                <li v-for="(elNav, i) in navBar" :key=" `el-${i}`">
+                    <a href="/">{{elNav}}</a>
+                </li>
+            </ul>
+        </nav>
+        <form>
+            <input type="text"
+                    class="from-control"
+                    placeholder="cerca il tuo film"
+                    v-model.trim= "textMovies"
+                    @keyup.enter="sendEmit"
+            >
+            <button type="submit" @click.prevent="sendEmit">
+                search
+            </button>
+        </form>
+    </header>
 </template>
 
 <script>
@@ -17,7 +29,14 @@ export default {
 name: 'Header',
 data(){
     return{
-        textMovies: ''
+        textMovies: '',
+        navBar: [
+            'Home',
+            'Tv Shows',
+            'Movies',
+            'New & Popular',
+            'My list'
+        ]
     }
 },
 methods:{
@@ -30,7 +49,43 @@ methods:{
 </script>
 
 <style lang="scss" scoped>
-input{
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+    height: 68px;
+    width: 100%;
+    .brand{
+        max-width: 92px;
+        height: fit-content;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    .navigation-ctn{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        color: #b3b3b3;
+        li{
+            margin-left: 1rem;
+            a{
+                cursor: pointer;
+                font-size: 0.8rem;
+                color: #b3b3b3;
+                text-decoration: none;
+                &:hover,
+                &:focus{
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    input{
     outline: none;
     padding: 5px 5px;
     &:focus{
@@ -45,8 +100,9 @@ button{
     cursor: pointer;
     &:focus,
     &:hover{
-        background: #000;
+        background: #dc1a28;
         color: #fff;
     }
+}
 }
 </style>
