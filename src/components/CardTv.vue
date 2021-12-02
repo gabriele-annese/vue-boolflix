@@ -3,7 +3,7 @@
         <ul>
             <li class="content">
                 <div class="cover">
-                    <div>
+                    <div class="img-ctn">
                         <img :src="`https://image.tmdb.org/t/p/w342${imgPoster}`" alt="cover_image" />
                     </div>
                 </div>

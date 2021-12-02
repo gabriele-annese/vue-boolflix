@@ -66,13 +66,19 @@ computed:{
         list-style: none;
         .content{
             position: relative;
+            &:hover{
+                .text{
+                    visibility: visible;
+                }
+            }
         }
         .cover{
             margin-right: 10px;
         }
         .text{
             position: absolute;
-            top: 0;
+            bottom: 0;
+            visibility: hidden;
         }
     }
 
