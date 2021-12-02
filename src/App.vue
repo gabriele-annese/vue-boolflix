@@ -2,7 +2,6 @@
   <div id="app">
     <Header @clickMovies="functionMovies"/>
     <main>
-      <Billboard />
       <Grid :moviesArray= "moviesArray"
             :tvArray= "tvArray"
       />
@@ -13,7 +12,6 @@
 <script>
 import Grid from './components/Grid.vue'
 import Header from './components/Header.vue'
-import Billboard from './components/Billboard.vue'
 import axios from 'axios'
 
 export default {
@@ -21,7 +19,6 @@ export default {
   components: {
     Header,
     Grid,
-    Billboard
   },
   data(){
     return {

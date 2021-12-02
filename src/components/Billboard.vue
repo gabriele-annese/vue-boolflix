@@ -1,7 +1,7 @@
 <template>
   <div class="Billboard">
       <div class="innerBillboard">
-          <p>hello</p>
+          <img src="../assets/heroGabflix.jpg" alt="">
       </div>
   </div>
 </template>
@@ -15,11 +15,12 @@ name: 'Billboard'
     .Billboard{
         background-color: yellow;
         position: relative;
-        top: 0;
+        top: -68px;
         left: 0;
         right: 0;
         .innerBillboard{
             position: absolute;
+            z-index: -1;
         }
     }
 </style>

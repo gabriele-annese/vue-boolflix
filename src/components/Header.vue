@@ -1,32 +1,39 @@
 <template>
-    <header>
-        <nav class="navbar">
-            <ul class="navigation-ctn">
-                <div class="brand">
-                      <img src="../assets/gabflix.png" alt="logo">
-                 </div>
-                <li v-for="(elNav, i) in navBar" :key=" `el-${i}`">
-                    <a href="/">{{elNav}}</a>
-                </li>
-            </ul>
-        </nav>
-        <form>
-            <input type="text"
-                    class="from-control"
-                    placeholder="cerca il tuo film"
-                    v-model.trim= "textMovies"
-                    @keyup.enter="sendEmit"
-            >
-            <button type="submit" @click.prevent="sendEmit">
-                search
-            </button>
-        </form>
-    </header>
+    <section>
+        <header>
+            <nav class="navbar">
+                <ul class="navigation-ctn">
+                    <div class="brand">
+                        <img src="../assets/gabflix.png" alt="logo">
+                    </div>
+                    <li v-for="(elNav, i) in navBar" :key=" `el-${i}`">
+                        <a href="/">{{elNav}}</a>
+                    </li>
+                </ul>
+            </nav>
+            <form>
+                <input type="text"
+                        class="from-control"
+                        placeholder="cerca il tuo film"
+                        v-model.trim= "textMovies"
+                        @keyup.enter="sendEmit"
+                >
+                <button type="submit" @click.prevent="sendEmit">
+                    search
+                </button>
+            </form>
+        </header>
+        <Billboard />
+    </section>
 </template>
 
 <script>
+import Billboard from './Billboard.vue'
 export default {
 name: 'Header',
+components: {
+    Billboard
+  },
 data(){
     return{
         textMovies: '',
