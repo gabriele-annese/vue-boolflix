@@ -4,13 +4,13 @@
             <li class="content">
                 <div class="cover">
                     <div>
-                        <img :src="`https://image.tmdb.org/t/p/w342${imgPoster}`" alt="cover_image" />
+                        <img class="movieImg" :src="`https://image.tmdb.org/t/p/w342${imgPoster}`" alt="cover_image" />
                     </div>
                 </div>
                 <div class="text">
                     <div class="text-overlay">
-                        <div class="title">Titolo:{{ title }}</div>
-                        <div class="orginalTitle">Titolo Originale: {{ originalTitle }}</div>
+                        <div class="title">Titolo: <h4>{{ title }}</h4></div>
+                        <div class="orginalTitle">Titolo Originale:<h4>{{ originalTitle }}</h4></div>
                         <div class="language">
                             <img v-if="flagVisible" :src="require(`../assets/${this.language}.png`)" :alt="language" />
                             <span v-else>{{ language }}</span>
@@ -61,24 +61,41 @@ computed:{
     display: flex;
     cursor: pointer;
     margin-top: 1rem;
-    width: calc(100% / 6);
+    h4{
+        display: inline-block;
+    }
     ul{
         list-style: none;
         .content{
             position: relative;
+            overflow: hidden;
             &:hover{
                 .text{
                     visibility: visible;
+                }
+                .movieImg{
+                    filter: brightness(13%);
                 }
             }
         }
         .cover{
             margin-right: 10px;
+            width: 100%;
+            img{
+                height: 450px;
+            }
         }
         .text{
             position: absolute;
-            bottom: 0;
+            top: 0;
             visibility: hidden;
+            padding-left: 3px;
+            padding-top: 100px;
+        }
+        .stars{
+            i{
+                color: gold;
+            }
         }
     }
 
