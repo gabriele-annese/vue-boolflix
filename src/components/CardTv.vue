@@ -3,8 +3,8 @@
         <ul>
             <li class="content">
                 <div class="cover">
-                    <div class="img-ctn">
-                        <img :src="`https://image.tmdb.org/t/p/w342${imgPoster}`" alt="cover_image" />
+                    <div >
+                        <img class="movieImg" :src="`https://image.tmdb.org/t/p/w342${imgPoster}`" alt="cover_image" />
                     </div>
                 </div>
                 <div class="text">
@@ -61,18 +61,41 @@ computed:{
     display: flex;
     cursor: pointer;
     margin-top: 1rem;
-    width: calc(100% / 6);
+    h4{
+        display: inline-block;
+    }
     ul{
         list-style: none;
         .content{
             position: relative;
+            overflow: hidden;
+            &:hover{
+                .text{
+                    visibility: visible;
+                }
+                .movieImg{
+                    filter: brightness(13%);
+                }
+            }
         }
         .cover{
             margin-right: 10px;
+            width: 100%;
+            img{
+                height: 450px;
+            }
         }
         .text{
             position: absolute;
             top: 0;
+            visibility: hidden;
+            padding-left: 3px;
+            padding-top: 100px;
+        }
+        .stars{
+            i{
+                color: gold;
+            }
         }
     }
 
