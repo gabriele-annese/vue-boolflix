@@ -87,10 +87,9 @@ computed:{
         }
         .text{
             position: absolute;
-            top: 0;
+            top: 10px;
             visibility: hidden;
             padding-left: 3px;
-            padding-top: 100px;
         }
         .stars{
             i{

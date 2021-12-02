@@ -4,7 +4,8 @@
             <li class="content">
                 <div class="cover">
                     <div >
-                        <img class="movieImg" :src="`https://image.tmdb.org/t/p/w342${imgPoster}`" alt="cover_image" />
+                        <img v-if="imgPoster" class="movieImg" :src="`https://image.tmdb.org/t/p/w342${imgPoster}`" alt="cover_image" />
+                        <img v-else class="movieImg size-not-found" :src="require('../assets/imgnotfound.jpg')" alt="cover_image" />
                     </div>
                 </div>
                 <div class="text">
@@ -82,15 +83,19 @@ computed:{
             margin-right: 10px;
             width: 100%;
             img{
+                 
                 height: 450px;
+            }
+            .size-not-found{
+                width: 342px;
+                object-fit: cover;
             }
         }
         .text{
             position: absolute;
-            top: 0;
+            top: 10px;
             visibility: hidden;
             padding-left: 3px;
-            padding-top: 100px;
         }
         .stars{
             i{
