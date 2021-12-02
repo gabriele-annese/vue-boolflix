@@ -13,7 +13,6 @@
 import Grid from './components/Grid.vue'
 import Header from './components/Header.vue'
 import axios from 'axios'
-
 export default {
   name: 'App',
   components: {
@@ -74,9 +73,9 @@ export default {
 
 <style lang="scss">
 body, html{
-  background: #141414;
   color: #fff;
   line-height: 1.2;
+  background-color: #141414;
 }
 *{
   margin: 0;
@@ -87,6 +86,5 @@ body, html{
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-top: 10px;
 }
 </style>

@@ -63,6 +63,8 @@ header{
     padding: 0 35px;
     height: 68px;
     width: 100%;
+    z-index: 4;
+    position: fixed;
     .brand{
         max-width: 92px;
         height: fit-content;

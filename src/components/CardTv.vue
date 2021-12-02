@@ -1,30 +1,34 @@
 <template>
-  <ul>
-      <li>
-            <h2>
-                Nome serie: {{title}}
-            </h2>
-      </li>
-      <li>
-            <h4>
-                Nome Originale: {{originalTitle}}
-            </h4>
-      </li>
-      <li class="img-container">
-          <h4>
-              Lingua:
-          </h4>
-            <img v-if="flagVisible" :src="require(`../assets/${this.language}.png`)" :alt="language">
-            <h4  v-else>
-                {{language}}
-            </h4>
-      </li>
-      <li>
-            <div class="stars-ctn">
-                <i class="fas fa-star iStar" v-for="(el, i) in starsNumber" :key=" `el-${i}`"></i>
-            </div>
-      </li>
-  </ul>
+    <div class="container">
+        <ul>
+            <li class="content">
+                <div class="cover">
+                    <div>
+                        <img :src="`https://image.tmdb.org/t/p/w342${imgPoster}`" alt="cover_image" />
+                    </div>
+                </div>
+                <div class="text">
+                    <div class="text-overlay">
+                        <div class="title">Titolo:{{ title }}</div>
+                        <div class="orginalTitle">Titolo Originale: {{ originalTitle }}</div>
+                        <div class="language">
+                            <img v-if="flagVisible" :src="require(`../assets/${this.language}.png`)" :alt="language" />
+                            <span v-else>{{ language }}</span>
+                        </div>
+                        <div class="stars">
+                                <i class="fas fa-star iStar" v-for="(el, i) in starsNumber" :key=" `el-${i}`"></i>
+                        </div>
+                        <div class="overview" v-if="overview">
+                            <p>Overview:  {{ overview }}</p>
+                        </div>
+                        <div class="overview" v-else>
+                            <p>Overview: No overview</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
 </template>
 
 <script>
@@ -35,6 +39,8 @@ props:{
     originalTitle: String,
     language: String,
     text: Number,
+    imgPoster: String,
+    overview: String,
 },
 computed:{
     flagVisible(){
@@ -51,28 +57,29 @@ computed:{
 </script>
 
 <style lang="scss" scoped>
-ul {
-    margin-top: 20px;
-    margin-left: 10px;
+.container{
     display: flex;
-    flex-direction: column;
-    li{
+    cursor: pointer;
+    margin-top: 1rem;
+    width: calc(100% / 6);
+    ul{
         list-style: none;
-        .iStar{
-            color: gold;
+        .content{
+            position: relative;
+        }
+        .cover{
+            margin-right: 10px;
+        }
+        .text{
+            position: absolute;
+            top: 0;
         }
     }
-    h2,h4{
-        padding-top: 8px;
-    }
-    .img-container{
-       display: flex;
-       align-items: center;
-    }
-    img{
-        margin: 5px 8px;
+
+    .language img{
         width: 50px;
         height: 30px;
     }
 }
+
 </style>
