@@ -10,8 +10,8 @@
                 </div>
                 <div class="text">
                     <div class="text-overlay">
-                        <div class="title">Titolo:{{ title }}</div>
-                        <div class="orginalTitle">Titolo Originale: {{ originalTitle }}</div>
+                        <div class="title">Titolo: <h4>{{ title }}</h4></div>
+                        <div class="orginalTitle">Titolo Originale: <h4>{{ originalTitle }}</h4></div>
                         <div class="language">
                             <img v-if="flagVisible" :src="require(`../assets/${this.language}.png`)" :alt="language" />
                             <span v-else>{{ language }}</span>
@@ -75,6 +75,7 @@ computed:{
                     visibility: visible;
                 }
                 .movieImg{
+                    transition: all 0.4s;
                     filter: brightness(13%);
                 }
             }
@@ -83,7 +84,7 @@ computed:{
             margin-right: 10px;
             width: 100%;
             img{
-                 
+                border-radius: 10px;
                 height: 450px;
             }
             .size-not-found{

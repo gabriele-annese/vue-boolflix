@@ -1,11 +1,7 @@
 <template>
     <section>
-
         <div class="segment">
             <h3>Original netflix</h3>
-            <!-- <button class="btn-segment">
-                <i class="fas fa-chevron-right"></i>
-            </button> -->
                 <div class="row">
                     <div class="slider">
                         <div v-for="(elMovies, index) in moviesArray" :key="`elMovies-${index}`" >
@@ -24,9 +20,6 @@
             <!-- series -->
             <div class="segment" >
                 <h3>Series</h3>
-                <!-- <button class="btn-segment">
-                    <i class="fas fa-chevron-right"></i>
-                </button> -->
                 <div class="row">
                     <div v-for="(elTv, index) in tvArray" :key="`elTv-${index}`">
                         <CardTv
@@ -53,6 +46,7 @@ name: 'Grid',
 props:{
     moviesArray: Array,
     tvArray: Array,
+    top10Movies: Array
 },
 data(){
     return{
