@@ -19,17 +19,6 @@
                         <input type="text" class="input-search"  v-model.trim= "textMovies"
                             @keyup.enter="sendEmit" placeholder="cerca il tuo film">
                     </div>
-                <!-- <div class="search-box">
-                    <button type="submit" @click.prevent="sendEmit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                    <input type="text"
-                            class="from-control"
-                            placeholder="Type to Search..."
-                            v-model.trim= "textMovies"
-                            @keyup.enter="sendEmit"
-                    >
-                </div> -->
             </form>
         </header>
         <Billboard />
@@ -65,7 +54,7 @@ methods:{
 window.onscroll = function(){
     let value = window.pageYOffset;
     console.log(value)
-    if(value >= 230){
+    if(value >= 100){
         document.querySelector('#header').style.background = '#000';
     }
     else{
@@ -85,7 +74,7 @@ header{
     z-index: 4;
     position: fixed;
     background:transparent ;
-    transition: all 1.2s;
+    transition: all 1s;
     .brand{
         max-width: 92px;
         height: fit-content;
@@ -131,10 +120,10 @@ header{
   transition: all .5s ease-in-out;
   background-color: transparent;
   padding-right: 40px;
-  color:#fff;
+  color: #fff;
 }
 .input-search::placeholder{
-  color:rgba(255,255,255,.5);
+  color: #fff;
   font-size: 18px;
   letter-spacing: 2px;
   font-weight: 100;
@@ -150,7 +139,7 @@ header{
   border-radius: 50%;
   position: absolute;
   right: 0px;
-  color:#ffffff ;
+  color:#fff;
   background-color:transparent;
   pointer-events: painted;  
 }
@@ -158,15 +147,15 @@ header{
   width: 300px;
   border-radius: 0px;
   background-color: transparent;
-  border-bottom:1px solid rgba(255,255,255,.5);
-  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  border:1px solid rgba(255,255,255,.8);
+  transition: all 0.5s cubic-bezier(0, 0.110, 0.35, 2);
 }
 .input-search:focus{
   width: 300px;
   border-radius: 0px;
   background-color: transparent;
-  border-bottom:1px solid rgba(255,255,255,.5);
-  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2)
+  border:1px solid rgba(255,255,255,.5);
+  transition: all 0.5s cubic-bezier(0, 0.110, 0.35, 2)
 }
 }
 

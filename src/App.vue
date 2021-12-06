@@ -6,6 +6,7 @@
             :tvArray= "tvArray"
       />
     </main>
+    <Footer />
   </div>
 </template>
 
@@ -13,11 +14,13 @@
 import Grid from './components/Grid.vue'
 import Header from './components/Header.vue'
 import axios from 'axios'
+import Footer from './components/Footer.vue'
 export default {
   name: 'App',
   components: {
     Header,
     Grid,
+    Footer,
   },
   data(){
     return {
