@@ -50,6 +50,19 @@
             </ul>
 
          </div>
+         <div class="btn-ctn">
+                <button class="btn-footer">
+                    Codice di servizio
+                </button>
+         </div>
+         <div class="copyright">
+             <span>
+                 © 1997-2021 Gabflix, Inc.
+             </span>
+             <span>
+                 {0f910b26-dc58-4745-b8c0-972088facc41}
+             </span>
+         </div>
   </div>
 </template>
 
@@ -89,8 +102,8 @@ data(){
 
 <style lang="scss" scoped>
     .container{
-        width: 80%;
-        margin: 20px auto;
+        width: 980px;
+        margin: 50px auto;
         .social-container{
             width: 100%;
             ul{
@@ -115,7 +128,7 @@ data(){
                 li{
                     padding: 10px 10px;
                     a{
-                        color: #fff;
+                        color: grey;
                         text-decoration: none;
                         font-size: 13px;
                         &:hover{
@@ -123,6 +136,25 @@ data(){
                         }
                     }
                 }
+            }
+        }
+        .btn-ctn{
+            width: 100%;
+            .btn-footer{
+                padding: 6px 5px;
+                color: grey;
+                background-color: transparent;
+                border: 1px solid grey;
+                &:hover{
+                    cursor: pointer;
+                    color: #fff;
+                }
+            }
+        }
+        .copyright{
+            margin: 1.5rem 0;
+            span{
+                font-size: 13px;
             }
         }
     }
