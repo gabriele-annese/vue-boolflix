@@ -11,15 +11,24 @@
                     </li>
                 </ul>
             </nav>
-            <form>
-                  <div class="search-box">
-                        <button type= "submit" @click.prevent="sendEmit" class="btn-search">
-                            <i class="fas fa-search"></i>
-                            </button>
-                        <input type="text" class="input-search"  v-model.trim= "textMovies"
-                            @keyup.enter="sendEmit" placeholder="cerca il tuo film">
+            <div class="header-right">
+                <div class="search-box">
+                    <button type= "submit" @click.prevent="sendEmit" class="btn-search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input type="text" class="input-search"  v-model.trim= "textMovies" 
+                     @keyup.enter="sendEmit" placeholder="cerca il tuo film">
+                </div>
+                <div class="notification">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="profile">
+                    <div class="box-profile">
+                       <img src="../assets/hasbullah.png" alt="">
                     </div>
-            </form>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
         </header>
         <Billboard />
     </section>
@@ -67,7 +76,6 @@ window.onscroll = function(){
 header{
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 0 35px;
     height: 68px;
     width: 100%;
@@ -75,6 +83,10 @@ header{
     position: fixed;
     background:transparent ;
     transition: all 1s;
+    .nav-bar{
+        display: flex;
+        justify-content: space-between;
+    }
     .brand{
         max-width: 92px;
         height: fit-content;
@@ -104,9 +116,10 @@ header{
         }
     }
 .search-box{
-  width: fit-content;
-  height: fit-content;
-  position: relative;
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    margin-right:  20px;
 }
 .input-search{
   height: 50px;
@@ -124,7 +137,7 @@ header{
 }
 .input-search::placeholder{
   color: #fff;
-  font-size: 18px;
+  font-size: 17px;
   letter-spacing: 2px;
   font-weight: 100;
 }
@@ -136,26 +149,57 @@ header{
   font-weight: bold;
   outline: none;
   cursor: pointer;
-  border-radius: 50%;
   position: absolute;
   right: 0px;
   color:#fff;
   background-color:transparent;
-  pointer-events: painted;  
+  pointer-events: painted;
 }
 .btn-search:focus ~ .input-search{
   width: 300px;
-  border-radius: 0px;
   background-color: transparent;
-  border:1px solid rgba(255,255,255,.8);
+  border:1px solid rgba(255,255,255,.5);
+  border-radius: 20px;
   transition: all 0.5s cubic-bezier(0, 0.110, 0.35, 2);
 }
 .input-search:focus{
   width: 300px;
-  border-radius: 0px;
   background-color: transparent;
-  border:1px solid rgba(255,255,255,.5);
+  border:1px solid rgba(255,255,255,.9);
+  border-radius: 10px;
   transition: all 0.5s cubic-bezier(0, 0.110, 0.35, 2)
+}
+.notification > i{
+    font-size: 20px;
+    cursor: pointer;
+}
+.header-right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    right: 50px;
+}
+.profile{
+    display: flex;
+    align-items: center;
+    i{
+        cursor: pointer;
+    }
+}
+.box-profile{
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-right: 4px;
+    cursor: pointer;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 }
 

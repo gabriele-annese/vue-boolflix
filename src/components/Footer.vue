@@ -113,6 +113,10 @@ data(){
                     padding: 0 10px;
                     i{
                         font-size: 23px;
+                        &:hover{
+                             font-size: 25px;
+                             cursor: pointer;
+                        }
                     }
                 }
             }
