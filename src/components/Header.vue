@@ -169,9 +169,16 @@ header{
   border-radius: 10px;
   transition: all 0.5s cubic-bezier(0, 0.110, 0.35, 2)
 }
-.notification > i{
-    font-size: 20px;
-    cursor: pointer;
+.notification{
+    i{
+        font-size: 20px;
+        cursor: pointer;
+        &:hover,
+        &:focus{
+            color: #dc1a28;
+        }
+    }
+
 }
 .header-right{
     display: flex;
