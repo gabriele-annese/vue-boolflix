@@ -21,15 +21,17 @@
             <div class="segment" >
                 <h3>Series</h3>
                 <div class="row">
-                    <div v-for="(elTv, index) in tvArray" :key="`elTv-${index}`">
-                        <CardTv
-                        :title="elTv.name"
-                        :originalTitle="elTv.original_name"
-                        :language="elTv.original_language"
-                        :text="elTv.vote_average"
-                        :imgPoster="elTv.poster_path"
-                        :overview="elTv.overview"
-                        />
+                    <div class="slider">
+                        <div v-for="(elTv, index) in tvArray" :key="`elTv-${index}`">
+                            <CardTv
+                            :title="elTv.name"
+                            :originalTitle="elTv.original_name"
+                            :language="elTv.original_language"
+                            :text="elTv.vote_average"
+                            :imgPoster="elTv.poster_path"
+                            :overview="elTv.overview"
+                            />
+                    </div>
 
                 </div>
                 </div>
